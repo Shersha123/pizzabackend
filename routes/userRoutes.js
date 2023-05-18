@@ -5,7 +5,7 @@ const User = require("../models/userModel");
 router.post("/register", (req, res) => {
   let newUser = new User(req.body);
   try {
-    newUser.save().then(()=>{
+    newUser.save().then(() => {
       res.status(200).json({
         success: true,
         message: "Registered successfully",
@@ -54,7 +54,7 @@ router.get("/getallusers", async (req, res) => {
 router.post('/deleteuser', async (req, res) => {
   const userid = req.body.userid
   try {
-    if (userid === "63ee66e10222b6f8ec0a42ec" || userid === "63ee676d0222b6f8ec0a42f4") {
+    if (userid === "6465abca136229edab2d9ace" || userid === "6465abfa136229edab2d9ad0") {
       res.status(401).send("Unauthorized")
     } else {
       await User.findOneAndDelete({ _id: userid })
